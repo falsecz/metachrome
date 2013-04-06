@@ -9,31 +9,26 @@
 	<link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap-responsive.min.css">
 	
-	<style>
-		/* velikosti si rucne prepisu */
-		body {
-			padding: 10px;
-	        min-width: 300px;
-	        min-height: 50px;
-	        overflow-x: hidden;
-	      }
-	</style>
-	
    	<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body class="base">
 	<div class="container">
+		<h1><small>.metalink</small></h1>
+		<div class="navbar">
+			<div class="navbar-inner">
+				<ul class="nav">
+					<li><a href="/page_content/popup.html">View</a></li>
+					<li class="active"><a href="/views/login_form.html">Connect</a></li>
+				</ul>
+			</div>
+		</div>
 
-		      <form class="form-signin">
-		        <h2 class="form-signin-heading">Please sign in</h2>
-		        <input type="text" class="input-block-level" placeholder="Email address">
-		        <input type="password" class="input-block-level" placeholder="Password">
-		        <label class="checkbox">
-		          <input type="checkbox" value="remember-me"> Remember me
-		        </label>
-		        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
-		      </form>
+		<form class="form-signin">
+			<input type="text" class="" placeholder="Server URL">
+			<input type="text" class="" placeholder="Nickname">
+			<button class="btn btn-primary" type="submit">Connect</button>
+		</form>
 
-	</div> <!-- /container -->
+	</div>
 </body>
 </html>

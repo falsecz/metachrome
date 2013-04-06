@@ -13,23 +13,25 @@
 	<script type="text/javascript" src="popup.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="/css/meta_main.css">
-	<style>
-		/* velikosti si rucne prepisu */
-		body {
-			min-width: 100px;
-			min-height: 50px;
-			overflow-x: hidden;
-		  }
-	</style>
 </head>
-<body>
-	<h1>meta</h1>
-	<ul id="menu" class="nav nav-tabs nav-stacked">
-		<li><a href="/views/login_form.html" class="">Login</a></li>
-		<li><a href="/views/comments.html" class="">Comments</a></li>
-		<li><a href="#" class="">CSFD</a></li>
-		<li><a href="#" class="">Settings</a></li>
-	</ul>
+<body class="base">
+	<div class="container">
+		<h1><small>.metalink</small></h1>
+		<div class="navbar">
+			<div class="navbar-inner">
+				<ul class="nav">
+					<li class="active"><a href="#">View</a></li>
+					<li><a href="/views/login_form.html">Connect</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<ul id="menu" class="nav nav-tabs nav-stacked">
+			<li><a href="/views/comments.html" class="">Comments</a></li>
+			<li><a href="#" class="">CSFD</a></li>
+			<li><a href="#" class="">Settings</a></li>
+		</ul>
+	</div>
 </body>
 </html>
 

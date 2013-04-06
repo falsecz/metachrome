@@ -13,9 +13,9 @@
 	<link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap-responsive.min.css">
 </head>
-<body>
-	<div id="comments">
-		<h3><a href="/page_content/popup.html" class="btn"><i class="icon-arrow-left"></i></a> <span>Comments</span></h3>
+<body class="extended">
+	<div id="comments" class="container">
+		<h1><a href="/page_content/popup.html" class="btn"><i class="icon-chevron-left"></i></a> <small>.metalink - comments</span></small></h1>
 		
 		<table class="table table-hover" id="comments-list">
 			<tr><th>Date</th><th>Comment</th><th>Author</th></tr>
@@ -24,11 +24,10 @@
 			 -->
 		</table>
 
-		<form class="form-inline" id="comments-add-form">
-			<input type="text" id="inputNick" name="nick" placeholder="Nick">
-			<input type="text" id="inputMessage" name="message" placeholder="Message">
-			<button type="submit" class="btn">Spread The Hate!</button>
-		</form>
+		<div class="message-form">
+			<textarea rows="3" name="message" placeholder="Your message..."></textarea>
+			<button type="submit" class="btn btn-primary">Spread The Hate!</button>
+		</div>
 
 	</div>
 	<textarea id="comment_area"></textarea>
