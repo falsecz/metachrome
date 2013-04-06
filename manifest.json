@@ -4,7 +4,7 @@
 	"description": "\"Share whatever you want about URL\" network client",
 	"version": "1.0",
 	"page_action": {
-		"default_icon": "link.png",
+		"default_icon": "icons/icon_48_active.png",
 		"default_title": ".meta - see what's hidden about this URL"
 	},
 	"permissions": [

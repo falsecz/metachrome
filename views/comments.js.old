@@ -1,8 +1,10 @@
+window.addListener 'DOMContentLoad', ->
+
 $(document).ready(function() {
 	// nacist komentare pres jSon - development/comments.json
 	$.ajax({
         type: "GET",
-        url: "development/comments.json",
+        url: "/development/comments.json",
         data: {},	
         cache: false,  
         dataType: "json",

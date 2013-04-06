@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
 	<title>.metalink page context</title>
+
+	<meta charset="utf-8" />
+
+	<link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap-responsive.min.css">
+
+	<script type="text/javascript" src="/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="popup.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="/css/meta_main.css">
+	<style>
+		/* velikosti si rucne prepisu */
+		body {
+			min-width: 100px;
+			min-height: 50px;
+			overflow-x: hidden;
+		  }
+	</style>
 </head>
 <body>
-<h1>Whoooaaa</h1>
+	<h1>meta</h1>
+	<div id="menu">
+		<a href="/views/login_form.html" data-toggle="tab" class="btn btn-primary" style="width: 100px;">Login</a>
+		<a href="/views/comments.html" data-toggle="tab" class="btn btn-primary" style="width: 100px;">Comments</a>
+		<a href="#" data-toggle="tab" class="btn btn-primary" style="width: 100px;">CSFD</a>
+		<a href="#" data-toggle="tab" class="btn btn-primary" style="width: 100px;">Settings</a>
+	</div>
 </body>
 </html>
+

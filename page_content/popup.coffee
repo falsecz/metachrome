@@ -1,5 +1,4 @@
-chrome.runtime.sendMessage get:'url', (response) ->
-	debugger
+chrome.runtime.sendMessage type:'url', (response) ->
 	h = document.querySelector 'h1'
 	h.innerText = response.url
 
