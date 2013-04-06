@@ -1,0 +1,5 @@
+[
+	{ "type": "comment",  "date" : "1.4.2013",  "content":  "První comment",   "nick": "A", "uid": "4Rx4RNk1UX7Dvq"},
+	{ "type": "comment",  "date" : "1.4.2013",  "content":  "2. komentář",     "nick": "B", "uid": "4Rx4RNk1UX7Dvq"},
+	{ "type": "comment",  "date" : "1.4.2013",  "content":  "Další příspěvek", "nick": "C", "uid" : "99wFJ0B"}
+]
