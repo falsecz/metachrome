@@ -17,7 +17,7 @@
 	<div id="comments">
 		<h3>Comments <i class="icon-comment"></i></h3>
 		
-		<table class="table table-hover" id="comments_list">
+		<table class="table table-hover" id="comments-list">
 			<tr><th>Date</th><th>Comment</th><th>Author</th></tr>
 			<!-- 
 			<tr><td>5.4. v 18:00</td><td>Bezva komentář s diakritikou.</td><td>Martin</td></tr>
@@ -25,9 +25,9 @@
 			 
 		</table>
 
-		<form class="form-inline">
-			<input type="text" id="inputNick" placeholder="Nick">
-			<input type="text" id="inputMessage" placeholder="Message">
+		<form class="form-inline" id="comments-add-form">
+			<input type="text" id="inputNick" name="nick" placeholder="Nick">
+			<input type="text" id="inputMessage" name="message" placeholder="Message">
 			<button type="submit" class="btn">Spread The Hate!</button>
 		</form>
 
