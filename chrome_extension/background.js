@@ -9,10 +9,13 @@ function checkForValidUrl(tabId, changeInfo, tab) {
   
   if (tab.url.indexOf('g') > -1) {
     // ... show the page action.
+    chrome.pageAction.setIcon({tabId: tabId,path:"icons/icon_16_active.png"});
     chrome.pageAction.setPopup({tabId: tabId, popup: "popup.html"});
-    chrome.pageAction.show(tabId);
     
+  } else {
+    chrome.pageAction.setIcon({tabId: tabId, path:"icons/icon_16_inactive.png"});
   }
+  chrome.pageAction.show(tabId);
 };
 
 // Listen for any changes to the URL of any tab.
