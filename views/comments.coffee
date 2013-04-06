@@ -24,8 +24,11 @@ sendComment = ->
 						console.log response
 		
 renderComments =  (data) ->
+	console.log 'rc'
+	
 	console.log data
-	commentList = $ '#comments_list'
+
+	commentList = $ '#comments-list'
 	$.each data, (index, item) ->
 		commentList.append "<tr><td>#{item.date}</td><td>#{item.message}</td><!--td>#{item.content}</td><td>#{item.nick}</td--></tr>"
 

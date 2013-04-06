@@ -48,6 +48,7 @@ ws.on 'search-result', (data) ->
 	message = 
 		type: 'search-result'
 		data: data
+	console.log 'a'
 	chrome.runtime.sendMessage message, (response) ->
 		return no
 	
