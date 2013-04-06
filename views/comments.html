@@ -1,29 +1,19 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Meta</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>.metalink page context</title>
 
+	<meta charset="utf-8">
+
+	<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/vendor/jquery/jquery-1.9.1.min.js"></script>
+	<script src="comments.js"></script>
+	
 	<link rel="stylesheet" type="text/css" href="/css/meta_main.css">
 	<link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap-responsive.min.css">
-	
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
-       <script src="popup.js"></script>
-     -->
-   	<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
-   	
-   	<!-- nacist jQuery -->
-   	<script src="/vendor/jquery/jquery-1.9.1.min.js"></script>
-   	
-   	<!-- nacist komentare -->
-   	<script src="comments.js"></script>
-  </head>
-  <body>
+</head>
+<body>
 	<div id="comments">
 		<h3>Comments <i class="icon-comment"></i></h3>
 		
@@ -34,7 +24,14 @@
 			 -->
 			 
 		</table>
+
+		<form class="form-inline">
+			<input type="text" id="inputNick" placeholder="Nick">
+			<input type="text" id="inputMessage" placeholder="Message">
+			<button type="submit" class="btn">Spread The Hate!</button>
+		</form>
+
 	</div>
-  </body>
+</body>
 </html>
 
