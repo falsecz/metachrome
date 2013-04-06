@@ -8,10 +8,11 @@
 		"default_title": ".meta - see what's hidden about this URL"
 	},
 	"permissions": [
-		"tabs"
+		"tabs",
+		"*://*/*"
 	],
 	"background": {
-		"scripts": ["page_content/background.js"],
+		"scripts": ["vendor/socket.io.js","page_content/background.js"],
 		"persistent": true
 	}
 }

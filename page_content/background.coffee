@@ -1,3 +1,5 @@
+ws = io.connect 'http://localhost:8000'
+
 getLocation = (url) ->
 	a = document.createElement 'a'
 	a.href = url
@@ -23,9 +25,12 @@ chrome.runtime.onMessage.addListener (message, sender, response) ->
 	return no unless message?.type?
 
 	switch message.type
+		when 'create-comment'
+			ws.emit 'publish', message.data
+	
 		when 'comments'
-			response _sample_comments
-
+				chrome.tabs.query {active:yes, currentWindow:yes}, (tabs) ->
+					ws.emit 'search', tabs[0].url if tabs.length
 		when 'url'
 			chrome.tabs.query {active:yes, currentWindow:yes}, (tabs) ->
 				response url:tabs[0].url if tabs.length
@@ -34,3 +39,17 @@ chrome.runtime.onMessage.addListener (message, sender, response) ->
 			return no
 	
 	return yes
+	
+ws.on 'channel-created', (data) ->
+	console.log data
+	
+ws.on 'search-result', (data) ->
+	console.log data
+	message = 
+		type: 'search-result'
+		data: data
+	chrome.runtime.sendMessage message, (response) ->
+		return no
+	
+		
+	
