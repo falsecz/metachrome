@@ -2,7 +2,7 @@
 var main;
 
 main = function() {
-  var commentAddForm, fuckOff;
+  var commentAddForm;
 
   chrome.runtime.sendMessage({
     type: 'comments'
@@ -14,14 +14,11 @@ main = function() {
       return commentList.append("<tr><td>" + item.date + "</td><td>" + item.content + "</td><td>" + item.content + "</td><td>" + item.nick + "</td></tr>");
     });
   });
-  commentAddForm = document.querySelector('form#comments-add-form');
-  fuckOff = function(ev) {
-    ev.preventDefault();
-    alert('bitch');
+  commentAddForm = $('form#comments-add-form');
+  return commentAddForm.submit(function() {
     alert(commentAddForm.serializeArray());
     return false;
-  };
-  return commentAddForm.addEventListener('submit', fuckOff, false);
+  });
 };
 
 document.addEventListener('DOMContentLoaded', main, false);
