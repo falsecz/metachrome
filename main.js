@@ -15,7 +15,7 @@ main = function() {
   var header, input;
 
   header = document.querySelector('h1');
-  header.innerText = 'NASER SI!';
+  header.innerText = 'whohoooooooo!';
   input = document.createElement('input');
   document.body.appendChild(input);
   return input.addEventListener('keyup', onInputChange(header), false);
