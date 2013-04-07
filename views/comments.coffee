@@ -12,6 +12,7 @@ sendComment = ->
 							message: dataSource.val()		
 					chrome.runtime.sendMessage request, (response) ->
 						console.log response
+					dataSource.val("")	
 		
 renderComments =  (data) ->	
 	commentList = $ '#comments-list'
