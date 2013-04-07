@@ -1,13 +1,3 @@
-# <<<<<<< HEAD
-# main = ->	
-# 	chrome.runtime.sendMessage type:'comments', (response) ->
-# 		commentList = $ '#comments-list'
-# 		$.each response, (index, item) ->
-# 			commentList.append "<tr><td>#{item.date}</td><td>#{item.content}</td><td>#{item.content}</td><td>#{item.nick}</td></tr>"
-# 	
-# 	
-# 	commentAddForm = $ 'form#comments-add-form'
-# =======
 sendComment = ->
 	console.log "click"
 	dataSource = $ "#comment_area"
@@ -23,11 +13,7 @@ sendComment = ->
 					chrome.runtime.sendMessage request, (response) ->
 						console.log response
 		
-renderComments =  (data) ->
-	console.log 'rc'
-	
-	console.log data
-
+renderComments =  (data) ->	
 	commentList = $ '#comments-list'
 	$.each data, (index, item) ->
 		commentList.append "<tr><td>#{item.date}</td><td>#{item.message}</td><!--td>#{item.content}</td><td>#{item.nick}</td--></tr>"
@@ -40,16 +26,8 @@ chrome.runtime.onMessage.addListener (message, sender, response) ->
 loadComments = ->	
 	button = $ "#send_button"
 	button.click sendComment
-	console.log 'load'
 	chrome.runtime.sendMessage type:'comments', (response) ->
 		return no
-# >>>>>>> comments handling
-# 
-	# commentAddForm.submit ->
-	# 	alert commentAddForm.serializeArray()
-	# 	return no
-# 
-# document.addEventListener 'DOMContentLoaded', main, no
 
 document.addEventListener 'DOMContentLoaded', loadComments, no
 
