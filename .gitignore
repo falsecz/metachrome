@@ -1,2 +1,4 @@
 node_modules
+page_content/*.js
+views/*.js
 .*
