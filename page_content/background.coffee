@@ -1,6 +1,22 @@
-ws = io.connect 'http://localhost:8000'
-registeredChannels = {}
+ws = null
+connectSocket = (url, callback) ->
+	ws = io.connect url
+	ws.on 'channel-created', (data) ->
+		console.log data
+		
+	ws.on 'search-result', (data) ->
+		console.log data
+		message = 
+			type: 'search-result'
+			data: data
+		console.log 'a'
+		chrome.runtime.sendMessage message, (response) ->
+			return no
+	callback?()
 
+connectSocket 'http://localhost:8000'
+
+registeredChannels = {}
 
 getLocation = (url) ->
 	a = document.createElement 'a'
@@ -29,28 +45,19 @@ chrome.runtime.onMessage.addListener (message, sender, response) ->
 					url = tabs[0].url if tabs.length
 					tabId = tabs[0].id if tabs.length
 					return unless url 
-#					return if registeredChannels[tabHash ]
-#					registeredChannels[tabHash ] = 1
+#					return if registeredChannels[tabHash]
+#					registeredChannels[tabHash] = 1
 					ws.emit 'search', {uri: url, hash: tabId }
 		when 'url'
 			chrome.tabs.query {active:yes, currentWindow:yes}, (tabs) ->
 				response url:tabs[0].url if tabs.length
+		
+		when 'connect'
+			connectSocket message.url, -> response message
+
 		else
 			console.log "Unknown type '#{message.type}'"
 			return no
 	
 	return yes
-	
-ws.on 'channel-created', (data) ->
-	console.log data
-	
-ws.on 'search-result', (data) ->
-	console.log data
-	message = 
-		type: 'search-result'
-		data: data
-	chrome.runtime.sendMessage message, (response) ->
-		return no
-	
-		
 	
