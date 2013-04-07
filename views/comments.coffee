@@ -18,7 +18,9 @@ renderComments =  (data) ->
 	commentList = $ '#comments-list'
 	$.each data, (index, item) ->
 		commentList.append "<tr><td>#{item.date}</td><td>#{item.message}</td><!--td>#{item.content}</td><td>#{item.nick}</td--></tr>"
-
+	
+	cont = document.getElementById 'container'
+	cont.scrollTop = cont.scrollHeight
 
 chrome.runtime.onMessage.addListener (message, sender, response) ->
 	if message.type is 'search-result'
