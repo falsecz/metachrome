@@ -3,6 +3,7 @@ var loadComments, renderComments, sendComment;
 
 sendComment = function() {
   var dataSource;
+
   console.log("click");
   dataSource = $("#comment_area");
   return chrome.tabs.query({
@@ -10,6 +11,7 @@ sendComment = function() {
     currentWindow: true
   }, function(tabs) {
     var request;
+
     console.log(dataSource);
     request = {
       type: 'create-comment',
@@ -27,6 +29,12 @@ sendComment = function() {
 
 renderComments = function(data) {
   var commentList;
+<<<<<<< HEAD
+=======
+
+  console.log('rc');
+  console.log(data);
+>>>>>>> 6353f7b214a6ccf4f54c994bfc02d4932e2d2232
   commentList = $('#comments-list');
   return $.each(data, function(index, item) {
     return commentList.append("<tr><td>" + item.date + "</td><td>" + item.message + "</td><!--td>" + item.content + "</td><td>" + item.nick + "</td--></tr>");
@@ -41,6 +49,7 @@ chrome.runtime.onMessage.addListener(function(message, sender, response) {
 
 loadComments = function() {
   var button;
+
   button = $("#send_button");
   button.click(sendComment);
   return chrome.runtime.sendMessage({
